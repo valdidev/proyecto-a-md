@@ -12,6 +12,10 @@ OUTPUT_FOLDER = 'output'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
+@app.route('/test')
+def test():
+    return 'ok'
+
 @app.route('/upload', methods=['POST'])
 def upload():
     if 'folder' not in request.files:
